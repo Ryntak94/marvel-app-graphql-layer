@@ -89,6 +89,9 @@ const driver = neo4j.driver(
 const neoSchema = new Neo4jGraphQL({typeDefs, driver})
 
 const server = new ApolloServer({
+    cors: {
+        origin: '*',
+    },
     schema: neoSchema.schema,
 })
 
